@@ -9,41 +9,53 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState ();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> 
+  with SingleTickerProviderStateMixin {
+  AnimationController animControl;
+
+  @override
+  void initState() {
+    super.initState();
+    animControl = AnimationController(
+      duration: Duration(seconds: 4),
+      vsync: this,
+    );
+
+    animControl.forward();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SplashColorAnimation(
-        Color(0xffff799d),
-        Color(0xff746aba),
         Container (
-        child: Stack (
-          children: <Widget>[
-            Opacity(
-              opacity: 0.5,
-              child: Center(
-                child: Image.asset("assets/images/background.png"),
-              )
-            ),
-            Shimmer.fromColors(
-              baseColor: Color(0xfff9f871),
-              highlightColor: Color(0xffff799d),
-              child: Container(
+          child: Stack (
+            children: <Widget>[
+              Opacity(
+                opacity: 0.5,
                 child: Center(
-                  child: Text(
-                    "CHAROIT",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40,
+                  child: Image.asset("assets/images/background.png"),
+                )
+              ),
+              Shimmer.fromColors(
+                baseColor: Color(0xfff9f871),
+                highlightColor: Color(0xffff799d),
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      "CHAROIT",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
     );
   }
   
