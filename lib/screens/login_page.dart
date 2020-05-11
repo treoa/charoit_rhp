@@ -1,7 +1,7 @@
 import 'package:charoit_rhp/main.dart';
 import 'package:flutter/material.dart';
 
-import 'Animation/FadeAnimation.dart';
+import 'package:charoit_rhp/Animation/FadeAnimation.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -17,10 +17,11 @@ class LoginPage extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage('assets/images/background.png'),
                   fit: BoxFit.fill,
-                )
+                ),
               ),
               child: Stack(
                 children: <Widget>[
+                  
                   Positioned(
                     left: 30,
                     width: 80,
