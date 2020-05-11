@@ -1,8 +1,6 @@
 import 'package:charoit_rhp/Animation/SplashColorAnimation.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:shimmer/shimmer.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

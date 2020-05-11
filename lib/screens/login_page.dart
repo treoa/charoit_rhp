@@ -1,216 +1,82 @@
-import 'package:charoit_rhp/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:charoit_rhp/Animation/FadeAnimation.dart';
 
 class LoginPage extends StatelessWidget {
+  final _formkey = new GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 400,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/background.png'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-              child: Stack(
-                children: <Widget>[
-                  
-                  Positioned(
-                    left: 30,
-                    width: 80,
-                    height: 200,
-                    child: Fade(
-                      1.0, 
-                      Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/light-1.png'),
-                          )
-                        ),
-                      ),
-                    )
-                  ),
-                  Positioned(
-                    left: 140,
-                    width: 80,
-                    height: 150,
-                    child: Fade(
-                      1.3, 
-                      Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/light-2.png'),
-                          )
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    right: 30,
-                    top: 40,
-                    width: 80,
-                    height: 200,
-                    child: Fade(
-                      1.5,
-                      Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/clock.png'),
-                        ),
-                      ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: 80,
-                      ),
-                      child: Fade(
-                        1.6,
-                        Center(
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      )
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(30.0),
-              child: Column (
-                children: <Widget>[
-                  Fade(1.7,
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(143, 148, 251, .2)
-                          )
-                        ]
-                      ),
-                      child: Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Colors.grey[100],
-                                )
-                              )
-                            ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                fillColor: Colors.white.withOpacity(.5),
-                                filled: true,
-                                labelText: "Username",
-                                labelStyle: TextStyle(
-                                  color: Colors.grey[400],
-                                  fontSize: 16
-                                ),
-                                border: InputBorder.none,
-                                hintText: "Password",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey[400],
-                                ),
-                              )
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Colors.grey[100],
-                                )
-                              )
-                            ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                fillColor: Colors.white.withOpacity(.5),
-                                filled: true,
-                                labelText: "Password",
-                                labelStyle: TextStyle(
-                                  color: Colors.grey[400],
-                                  fontSize: 16
-                                ),
-                                border: InputBorder.none,
-                                hintText: "Password",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey[400],
-                                ),
-                              )
-                            ),
-                          ),
-                        ],
-                      )
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Fade (
-                    2,
-                    Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          colors: [
-                            Color.fromRGBO(143, 148, 251, .2),
-                            Color.fromRGBO(143, 148, 251, .6),
-                          ]
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          )
-                        )
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 70,
-                  ),
-                  Fade(
-                    1.5,
-                    Text(
-                      "Forgot Password",
-                      style: TextStyle(
-                        color: Color.fromRGBO(143, 148, 251, .2),
-                        fontWeight: FontWeight.bold,
-                      )
-                    ),
-                  ),
-                ],
-              )
+        color: Color.fromRGBO(36, 43, 47, 1),
+        padding: const EdgeInsets.symmetric(horizontal: 43.0),
+        child: Form(
+          key: _formkey,
+          child: Container(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildPhoneNumber(),
+              ],
             )
-          ],
+          )
         )
+      )
+    );
+  }
+
+  InputDecoration _buildInputDecoration(String hint, String iconPath) {
+    return InputDecoration(
+      focusedBorder: UnderlineInputBorder (
+        borderSide: BorderSide(color: Color.fromRGBO(252, 252, 252, 1)),
+      ),
+      hintText: hint,
+      enabledBorder: UnderlineInputBorder(
+        borderSide:BorderSide (color: Color.fromRGBO(151, 151, 151, 1)),
+      ),
+      hintStyle: TextStyle(
+        color: Color.fromRGBO(252, 252, 252, 1),
+      ),
+      icon: iconPath != '' ? Image.asset(iconPath) : null,
+      errorStyle: TextStyle(
+        color: Color.fromRGBO(248, 218, 87, 1),
+      ),
+      errorBorder: UnderlineInputBorder(
+        borderRadius: BorderRadius.circular(24),
+        borderSide: BorderSide(
+          color: Color.fromRGBO(248, 218, 87, 1),
+        ),
+      ),
+      focusedErrorBorder: UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: Color.fromRGBO(248, 218, 87, 1),
+        ),
       ),
     );
+  }
+
+  Widget _buildPhoneNumber () {
+    final _PhoneNumberController = TextEditingController();
+
+    return TextFormField(
+      obscureText: false,
+      controller: _PhoneNumberController,
+      validator: (value) => !isPhoneNumber(value) ? "Неправильный номер телефона" : null,
+      style: TextStyle(
+        color: Color.fromRGBO(252, 252, 252, 1),
+      ),
+      // decoration: _buildInputDecoration("Phone Number", "assets/images/background.png"),
+    );
+  }
+
+  bool isPhoneNumber(String value) {
+    String regex = r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$';
+
+    RegExp regExp = new RegExp(regex);
+
+    return value.isNotEmpty && regExp.hasMatch(value);
   }
 }

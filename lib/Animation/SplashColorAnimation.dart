@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:charoit_rhp/main.dart';
 import 'package:shimmer/shimmer.dart';
 
 
@@ -20,7 +19,8 @@ class ColorAnimation extends StatelessWidget {
         ColorTween(
           begin: color_1,
           end: color_2,
-        ))
+        ),
+      ),
     ]);
     return ControlledAnimation(
       playback: Playback.MIRROR,
