@@ -27,36 +27,10 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashColorAnimation(
-        Container (
-          child: Stack (
-            children: <Widget>[
-              Opacity(
-                opacity: 0.5,
-                child: Center(
-                  child: Image.asset("assets/images/background.png"),
-                )
-              ),
-              Shimmer.fromColors(
-                baseColor: Color(0xfff9f871),
-                highlightColor: Color(0xffff799d),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "CHAROIT",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 40,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+      body: ColorAnimation(
+        Color(0xff538BE0),
+        Color(0xff3762b1),
       ),
     );
   }
-  
 }

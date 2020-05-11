@@ -1,23 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:charoit_rhp/main.dart';
+import 'package:shimmer/shimmer.dart';
 
-class SplashColorAnimation extends StatefulWidget {
 
-  final Widget child;
-  SplashColorAnimation({Key key, this.child}) : super(key: key);
 
-  @override
-  _SplashColorAnimationState createState() => _SplashColorAnimationState(child);
-}
+import 'package:simple_animations/simple_animations/controlled_animation.dart';import 'package:simple_animations/simple_animations/multi_track_tween.dart';
 
-class _SplashColorAnimationState extends State<SplashColorAnimation> {
-  final Widget child;
+class ColorAnimation extends StatelessWidget {
+  final Color color_1;
+  final Color color_2;
 
-  _SplashColorAnimationState(this.child);
+  ColorAnimation(this.color_1, this.color_2);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       backgroundColor: Color(0xff746ABA),
+    final tween = MultiTrackTween([
+      Track("the_color").add(
+        Duration(milliseconds: 1500),
+        ColorTween(
+          begin: color_1,
+          end: color_2,
+        ))
+    ]);
+    return ControlledAnimation(
+      playback: Playback.MIRROR,
+      tween: tween,
+      duration: tween.duration,
+      builder: (context, animation) {
+        return Container(
+          alignment: Alignment.center,
+          child: Shimmer.fromColors(
+                baseColor: Color(0xff538be0),
+                highlightColor: Color(0xff00e2bb),
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      "MARIS",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 80,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          decoration: BoxDecoration(
+            color: animation["the_color"],
+          ),
+        );
+      },
     );
   }
 }
