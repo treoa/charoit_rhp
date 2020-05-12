@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1039634806971",
+    "firebase_url": "https://maris-f8a7f.firebaseio.com",
+    "project_id": "maris-f8a7f",
+    "storage_bucket": "maris-f8a7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039634806971:android:21955632edd83c5c8f519e",
+        "android_client_info": {
+          "package_name": "com.example.charoit_rhp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039634806971-98pkhsgopnk408rrj121jfh843j6cbko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.charoit_rhp",
+            "certificate_hash": "ce540cdd18c78b6df33804eae2146e94fb7b5b77"
+          }
+        },
+        {
+          "client_id": "1039634806971-1hpq45suqhmca4d1iiffnl7c3famshg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxVDFLVhABeraKzr635F9AgsnX-BeOUb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039634806971-1hpq45suqhmca4d1iiffnl7c3famshg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
