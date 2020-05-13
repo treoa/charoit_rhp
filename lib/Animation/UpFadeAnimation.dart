@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
-class Fade extends StatelessWidget {
+class UpFade extends StatelessWidget {
   final double delay;
   final Widget child;
 
-  Fade(this.delay, this.child);
+  UpFade(this.delay, this.child);
 
 
   @override
   Widget build(BuildContext context) {
     final tween = MultiTrackTween([
       Track("opacity").add(Duration(milliseconds: 500), Tween(begin: 0.0, end: 1.0)),
-      Track("translateX").add(Duration(milliseconds: 500), Tween(begin: -30.0, end: 0.0), curve: Curves.easeOut),
+      Track("translateY").add(Duration(milliseconds: 500), Tween(begin: -30.0, end: 0.0), curve: Curves.easeOut),
     ]);
 
     return ControlledAnimation(
@@ -23,7 +23,7 @@ class Fade extends StatelessWidget {
       builderWithChild: (context, child, animation) => Opacity(
         opacity: animation["opacity"],
         child: Transform.translate(
-          offset: Offset(animation["translateX"], 0),
+          offset: Offset(0, animation["translateY"]),
           child: child,
         ),
       ),

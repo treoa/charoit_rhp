@@ -17,8 +17,23 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("TREECAPITATOR, You are logged in, dear ",
-            style: TextStyle(),
+            Text(
+              "TREECAPITATOR, You are logged in, dear ",
+              style: TextStyle(
+                color: Colors.lightBlue,
+                fontSize: 32,
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              "${user.phoneNumber}",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.lightBlue,
+                fontSize: 32,
+              ),
             ),
           ],
         )

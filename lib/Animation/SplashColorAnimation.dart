@@ -29,21 +29,14 @@ class ColorAnimation extends StatelessWidget {
       builder: (context, animation) {
         return Container(
           alignment: Alignment.center,
-          child: Shimmer.fromColors(
-                baseColor: Color(0xff538be0),
-                highlightColor: Color(0xff00e2bb),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "MARIS",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 80,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+          child: Text(
+            "MARIS",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 80,
+            )
+          ),
           decoration: BoxDecoration(
             color: animation["the_color"],
           ),
