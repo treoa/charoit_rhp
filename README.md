@@ -1,6 +1,6 @@
 # Charoit Ride Hailing App
 
-[![Follow me](https://img.shields.io/github/languages/count/treoa/charoit_rhp)]
+![Follow me](https://img.shields.io/github/languages/count/treoa/charoit_rhp)
 
 ## Flutter based. Forks and other contributions are welcomed
 
