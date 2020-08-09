@@ -1,6 +1,5 @@
 # Charoit Ride Hailing App
 
-### Some stats:
 [![Star the project](https://img.shields.io/badge/treoa-Star_me-blueviolet)](https://github.com/treoa/charoit_rhp/stargazers)
 
 ## Flutter based. Forks and other contributions are welcomed
