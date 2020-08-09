@@ -16,5 +16,10 @@ https://img.shields.io/github/languages/count/treoa/charoit_rhp
 ```git
 git clone https://github.com/treoa/charoit_rhp.git
 ```
+2. Run flutter app, navigating to the root directory of the project
+```
+flutter run
+```
+P.S For now the project is still being under the development, so to test some screens, just change it in the main page
 
 ## Misc
