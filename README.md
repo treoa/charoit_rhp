@@ -1,7 +1,20 @@
-# charoit_rhp
+# Charoit Ride Hailing App
 
-Project for Maris user version
+https://img.shields.io/github/languages/count/treoa/charoit_rhp
 
-For now implementing UIs with several pages. For viewing them, just change the HomePage to the screen you wish to test.
+## Flutter based. Forks and other contributions are welcomed
 
-Credits to ALLLLLL
+## TO DOs:
+[] Make a login screen
+[] Make a UI for 
+[] Integrate Firebase database and Firabase auth
+[] Make a main menu UI
+[] Integrate Google Maps
+
+## Setup
+1. Fork the repository or clone it using:
+```git
+git clone https://github.com/treoa/charoit_rhp.git
+```
+
+## Misc
